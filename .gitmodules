@@ -1,0 +1,3 @@
+[submodule "computer-graphics-raster-images"]
+	path = computer-graphics-raster-images
+	url = https://github.com/karansher/computer-graphics-raster-images.git
