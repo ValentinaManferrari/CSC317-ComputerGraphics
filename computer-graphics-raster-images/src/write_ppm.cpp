@@ -14,7 +14,22 @@ bool write_ppm(
     (num_channels == 3 || num_channels ==1 ) &&
     ".ppm only supports RGB or grayscale images");
   ////////////////////////////////////////////////////////////////////////////
-  // Replace with your code here:
+  /* Reference Sources used to write this function:
+        - https://en.wikipedia.org/wiki/Netpbm#File_format_description 
+        - https://cplusplus.com/forum/general/208835/
+  */
+
+  // open ppm file
+  std::ofstream ppm_file(filename);
+  // add header : P6, width, height, num_channels
+  if (ppm_file.is_open()) {
+      // add data
+      // close file
+      return true;
+  }
+  else {
+      std::cout << "Error: could not open file" << filename << std::endl;
+  }
   return false;
   ////////////////////////////////////////////////////////////////////////////
 }
