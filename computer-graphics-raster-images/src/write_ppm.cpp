@@ -29,9 +29,8 @@ bool write_ppm(
 
       // add data
       int img_size = width * height * num_channels;
-      for (int i = 0; i = img_size; ++i) {
-          std::cout << data.size() << std::endl;
-
+      for (int i = 0; i < img_size; ++i) {
+          
           ppm_file << (unsigned int) data[i];
           // if it's a grayscale img repeate the same value 3 times 
           if (num_channels == 1) {
