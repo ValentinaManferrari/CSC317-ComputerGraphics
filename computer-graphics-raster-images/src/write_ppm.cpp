@@ -22,10 +22,14 @@ bool write_ppm(
 
   // open ppm file
   std::ofstream ppm_file(filename);
-  
+  ppm_file.open(filename);
+
   if (ppm_file.is_open()) {
       // add header : P3, width, height, max intensity (255 for rgb || 1 for grayscale)
-      ppm_file << "P3 " + std::to_string(width) + " " + std::to_string(height) + " 255" << std::endl;
+      // ppm_file << "P3 " + std::to_string(width) + " " + std::to_string(height) + " 255" << std::endl;
+      ppm_file << "P3" << std::endl;
+      ppm_file << width + " " + height << std::endl;
+      ppm_file << 255 << std::endl;
 
       // add data
       int img_size = width * height * num_channels;
