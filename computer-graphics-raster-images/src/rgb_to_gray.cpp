@@ -8,15 +8,19 @@ void rgb_to_gray(
 {
   gray.resize(height*width);
   ////////////////////////////////////////////////////////////////////////////
-  for (int row = 0; row < height; row++) {
-      for (int col = 0; col < width; col++) {
-          // reading colour values from rgb vector
-          int red = rgb[0 + 3 * (col + row * width)];
-          int green = rgb[1 + 3 * (col + row * width)];
-          int blue = rgb[2 + 3 * (col + row * width)];
-          // converting to gray using a weighted average
-          gray[col + row*width] = 0.2126*red + 0.7152*green + 0.0722*blue;
-      }
+  int size = (width * height) * 3; // multiplying by 3 channels because we know it's a rgb img
+  int i = 0;
+
+  while(i < size) { 
+	  // reading colour values from rgb vector
+	  float red = rgb[i];
+	  float green = rgb[i+1];
+	  float blue = rgb[i+2];
+
+	  // converting to gray using given weighted average
+	  gray[i/3] = (unsigned char)(0.2126*red + 0.7152*green + 0.0722*blue);
+
+	  i = i + 3; // Note: loop step is 3 for handling channels 
   }
   ////////////////////////////////////////////////////////////////////////////
 }
