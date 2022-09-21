@@ -17,6 +17,7 @@ void hue_shift(
 
           int idx = 3 * (col + row * width);
           double h = 0.0, s = 0.0, v = 0.0;
+
           double r = rgb[idx + 0];
           double g = rgb[idx + 1];
           double b = rgb[idx + 2];
