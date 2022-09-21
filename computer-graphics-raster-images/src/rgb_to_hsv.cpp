@@ -11,8 +11,12 @@ void rgb_to_hsv(
   double & v)
 {
   ////////////////////////////////////////////////////////////////////////////
-  double M = std::max({ r, g, b }); // get maximum rgb value
-  double m = std::min({ r, g, b }); // get minimum rgb value
+  double red = r / 255.0;
+  double green = g / 255.0;
+  double blue = b / 255.0;
+
+  double M = std::max({red, green, blue}); // get maximum rgb value
+  double m = std::min({ red, green, blue }); // get minimum rgb value
   double C = M - m; // calculate the range
 
   v = M; // value
@@ -26,28 +30,27 @@ void rgb_to_hsv(
   }
 
   //hue
-  if (M == r) {
-	  h = 60 * std::fmod((g - b) / C, 6);
+  if (M == red) {
+	  h = 60 * (std::fmod((green - blue) / C, 6));
   }
-  else if (M == g) {
-	  h = 60 * ((b - r) / C) + 2;
+  else if (M == green) {
+	  h = 60 * (((blue - red) / C) + 2.0);
   }
-  else if (M == b) {
-	  h = 60 * ((r - g) / C) + 4;
+  else if (M == blue) {
+	  h = 60 * (((red - green) / C) + 4.0);
   }
   else {
-	  h = 0; // hue is undefined
+	  h = 0;
   }
 
   // hue fitting into 360 degrees
-  if (h > 0) {
+  if (h >= 0) {
 	  h = std::fmod(h, 360);
   }
   else {
-	  h = h * (-1); 
+	  h = h * (-1);
 	  h = std::fmod(h, 360);
 	  h = 360 - h;
   }
-
   ////////////////////////////////////////////////////////////////////////////
 }
