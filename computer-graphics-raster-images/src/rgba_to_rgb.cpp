@@ -10,7 +10,7 @@ void rgba_to_rgb(
   ////////////////////////////////////////////////////////////////////////////
   int rgb_idx = 0;
   for (int rgba_idx = 0; rgba_idx < rgba.size(); ++rgba_idx) {
-	  if ((rgba_idx + 1) % 4) {
+	  if ((rgba_idx + 1) % 4 == 0) {
 		  continue; // skip alpha channel 
 	  }
 	  else {

@@ -9,20 +9,12 @@ void rotate(
 {
   rotated.resize(height*width*num_channels);
   ////////////////////////////////////////////////////////////////////////////
-  int row = 0;
-  while(row < height) {
-      int rotated_col = row;  
-      int start = width - 1;
-      int end = 0;
-      while (start > end) {
-          int rotated_row = width - start - 1;
+  for(int row=0; row<height; row++){
+      for(int col=0; col<width; col++){
           for (int rgb = 0; rgb < num_channels; rgb++) {
-              rotated[(rotated_col + height*rotated_row)*num_channels + rgb] = input[num_channels * (start + width * row) + rgb];
+              rotated[num_channels * ((width - col - 1) * height + row) + rgb] = input[num_channels * (row * width + col) + rgb];
           }
-          start--;
-          end++;
-      };
-      row++;
+      } 
   }
   ////////////////////////////////////////////////////////////////////////////
 }

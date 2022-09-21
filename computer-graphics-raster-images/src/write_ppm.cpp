@@ -33,7 +33,7 @@ bool write_ppm(
       // add header : magic number, width, height, max intensity (255 for rgb || 1 for grayscale)
       // ppm_file << "P3 " + std::to_string(width) + " " + std::to_string(height) + " 255" << std::endl;
       ppm_file << magic_number << std::endl;
-      ppm_file << width + " " + height << std::endl;
+      ppm_file << width << " " << height << std::endl;
       ppm_file << 255 << std::endl;
 
       // add data
@@ -43,20 +43,20 @@ bool write_ppm(
           ppm_file << (unsigned int) data[i];
           // if it's a grayscale img repeate the same value 3 times 
           if (num_channels == 1) {
-              ppm_file << " " << (unsigned int)data[i] << " " << (unsigned int)data[i];
+              ppm_file << (unsigned int) data[i] << " " << (unsigned int)data[i];
           }
           // check the approptiate spacing 
-          if ( (i+1) % 3 == 0) {
-              ppm_file << "   "; // add double spacing every pixel value (= channel value *3)
-          }
-          else if (i % (width * num_channels) == 0) {
+          if ((i + 1) % (width * num_channels) == 0) {
               ppm_file << std::endl; // new line at the end of each row
+          }
+          else if ((i + 1) % 3 == 0) {
+              ppm_file << "   "; // add double spacing every pixel value (= channel value *3)
           }
           else {
               ppm_file << " "; // add single space between channel values
           }
       }
-      
+            
       // close file
       ppm_file.close();
       return true;
