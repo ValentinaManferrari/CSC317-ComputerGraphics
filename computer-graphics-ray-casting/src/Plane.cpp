@@ -23,10 +23,10 @@ bool Plane::intersect(
 	t = plane.dot(e - pt) / denom;
 	n = plane.normalized();
 	
-	if (t >= min_t) {
-		return true;
+	if (t < min_t) {
+		return false;
 	}
-	return false;
+	return true;
   ////////////////////////////////////////////////////////////////////////////
 }
 
