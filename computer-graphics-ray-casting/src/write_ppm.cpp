@@ -38,10 +38,7 @@ bool write_ppm(
         for (int i = 0; i < img_size; ++i) {
 
             ppm_file << (unsigned int)data[i];
-            // if it's a grayscale img repeate the same value 3 times 
-            //if (num_channels == 1) {
-            //    ppm_file << (unsigned int) data[i] << " " << (unsigned int)data[i];
-            //}
+
             // check the approptiate spacing 
             if ((i + 1) % (width * num_channels) == 0) {
                 ppm_file << std::endl; // new line at the end of each row
