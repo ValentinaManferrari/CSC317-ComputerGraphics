@@ -3,8 +3,7 @@
 #include <cmath>
 #include <Eigen/Geometry>
 #include <Eigen/Dense>
-using namespace Eigen;
-using namespace std;
+
 bool Triangle::intersect(
   const Ray & ray, const double min_t, double & t, Eigen::Vector3d & n) const
 {
@@ -14,31 +13,27 @@ bool Triangle::intersect(
               - Used Formulas from section 4.4.2: Ray-Triangle Intersection
   */
     // retrieve ray parameters
-    Vector3d A = get<0>(corners);
-    Vector3d B = get<1>(corners);
-    Vector3d C = get<2>(corners);
+    Eigen::Vector3d eye = ray.origin;
+    Eigen::Vector3d direction = ray.direction;
+    
+    // retrieve triangle corner values
+    Eigen::Vector3d A = std::get<0>(this->corners);
+    Eigen::Vector3d B = std::get<1>(this->corners);
+    Eigen::Vector3d C = std::get<2>(this->corners);  
 
-    // Ray
-    Vector3d D = ray.direction;
-    Vector3d E = ray.origin;
+    double a = A[0] - B[0];
+    double b = A[1] - B[1];
+    double c = A[2] - B[2];
+    double d = A[0] - C[0];
+    double e = A[1] - C[1];
+    double f = A[2] - C[2];
+    double g = direction[0];
+    double h = direction[1];
+    double i = direction[2];
+    double j = A[0] - eye[0];
+    double k = A[1] - eye[1];
+    double l = A[2] - eye[2];
 
-    // System of equations
-    Vector3d A_minus_B = A - B;
-    Vector3d A_minus_C = A - C;
-    Vector3d A_minus_E = A - E;
-
-    double a = A_minus_B[0];
-    double b = A_minus_B[1];
-    double c = A_minus_B[2];
-    double d = A_minus_C[0];
-    double e = A_minus_C[1];
-    double f = A_minus_C[2];
-    double g = D[0];
-    double h = D[1];
-    double i = D[2];
-    double j = A_minus_E[0];
-    double k = A_minus_E[1];
-    double l = A_minus_E[2];
     double m = a * (e * i - h * f) + b * (g * f - d * i) + c * (d * h - e * g);
 
     t = -(f * (a * k - j * b) + e * (j * c - a * l) + d * (b * l - k * c)) / m;
