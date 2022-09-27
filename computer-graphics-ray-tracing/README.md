@@ -46,8 +46,8 @@ surface (i.e., false intersections due to numerical error).
 > consider rational coefficients? What if we consider a sphere instead of a
 > plane?
 >
-> **Hint:** Can we _exactly_ represent <img src="/tex/70118eb82d4643bd42647f21941136af.svg?invert_in_darkmode&sanitize=true" align=middle width=24.657628049999992pt height=24.65753399999998pt/> as a `double`? Can we represent
-> <img src="/tex/71486f265f83bc1e3d2b6f67704bcc23.svg?invert_in_darkmode&sanitize=true" align=middle width=21.91788224999999pt height=28.511366399999982pt/> as a rational?
+> **Hint:** Can we _exactly_ represent 1/3 as a `double`? Can we represent
+> sqrt(2)
 
 ### Dynamic Range & Burning
 
@@ -57,7 +57,7 @@ the light reflected of some part of an objects is the _sum_ of contributions
 from light coming in all directions (e.g., from all light sources). If there are
 many bright lights in the scene and the object has a bright color, it is easy
 for this sum to add up to more than one. At first this seems counter-intuitive:
-How can we exceed 100% light? But this premise is false, the <img src="/tex/f58ed17486d1735419372f2b7d091779.svg?invert_in_darkmode&sanitize=true" align=middle width=21.00464354999999pt height=21.18721440000001pt/> does not mean
+How can we exceed 100% light? But this premise is false, the 1.0 does not mean
 the physically brightest possible light in the world, but rather the brightest
 light our screen can display (or the brightest color we can store in our chosen
 image format). [High dynamic range (HDR)
@@ -87,8 +87,8 @@ regions where the collected light has been clamped to \[1,1,1\]
 
 There are many ways to "multiply" two vectors. One way is to compute the
 [component-wise](https://en.wikipedia.org/wiki/Hadamard_product_(matrices))
-multiplication: <img src="/tex/22f21af20c3e7f253a35c65bed98680e.svg?invert_in_darkmode&sanitize=true" align=middle width=65.53603979999998pt height=22.831056599999986pt/> or in index notation:
-<img src="/tex/59064857cf8a4117765652ff2be6d992.svg?invert_in_darkmode&sanitize=true" align=middle width=60.371878049999985pt height=22.831056599999986pt/>. That is, multiply each corresponding component and store the
+multiplication: c=a*b or in index notation:
+c_i=a_i*b_i. That is, multiply each corresponding component and store the
 result in the corresponding component of the output vector. Using the Eigen
 library this is accomplished by telling Eigen to treat each of the vectors as
 "array" (where [matrix multiplication](), [dot product](), [cross product]()
