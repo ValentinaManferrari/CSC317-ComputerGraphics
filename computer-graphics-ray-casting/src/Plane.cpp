@@ -9,19 +9,19 @@ bool Plane::intersect(
 	Eigen::Vector3d e = ray.origin;
 	Eigen::Vector3d d = ray.direction;
 	// retrieve plane values
-	Eigen::Vector3d plane = this->normal;
-	Eigen::Vector3d pt = this->point;
+	Eigen::Vector3d N = this->normal;
+	Eigen::Vector3d p0 = this->point;
 
 	// t = (plane*(e - pt)) / (plane * d) 
-	double denom = plane.dot(d);
+	double denom = N.dot(d);
 	
 	// if denominator is zero ray is not hitting the plane
 	if (denom == 0) {
 		return false;
 	}
 
-	t = plane.dot(e - pt) / denom;
-	n = plane.normalized();
+	t = -N.dot(e - p0) / denom;
+	n = N.normalized();
 	
 	if (t < min_t) {
 		return false;
