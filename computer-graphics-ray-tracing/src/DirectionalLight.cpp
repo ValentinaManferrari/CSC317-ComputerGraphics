@@ -6,7 +6,7 @@ void DirectionalLight::direction(
 {
   ////////////////////////////////////////////////////////////////////////////
 	d = -(this->d).normalized(); // direction from point toward light as a vector.
-	max_t = numeric_limits<double>::infinity(); //parametric distance from q along d to light (by definition of Directional Light will be inf)
+	max_t = std::numeric_limits<double>::infinity(); //parametric distance from q along d to light (by definition of Directional Light will be inf)
 	return;
   ////////////////////////////////////////////////////////////////////////////
 }
