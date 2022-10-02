@@ -20,7 +20,7 @@ bool raycolor(
 
   int hit_id;
   double t;
-  Vector3d n;
+  Eigen::Vector3d n;
   bool hit = first_hit(ray, min_t, objects, hit_id, t, n);
 
   if (hit) {
