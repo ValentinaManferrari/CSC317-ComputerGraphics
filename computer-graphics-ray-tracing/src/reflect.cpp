@@ -3,7 +3,10 @@
 Eigen::Vector3d reflect(const Eigen::Vector3d & in, const Eigen::Vector3d & n)
 {
   ////////////////////////////////////////////////////////////////////////////
-  // Replace with your code here:
-  return Eigen::Vector3d(0,0,0);
+	/* Reference Sources used to write this function:
+		  - Texbook Section 4.8: Ideal Specular Reflection
+	*/
+	Eigen::Vector3d reflectedRay = in - 2 * in.dot(n) * n;
+	return reflectedRay.normalized();
   ////////////////////////////////////////////////////////////////////////////
 }
