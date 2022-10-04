@@ -45,7 +45,7 @@ Eigen::Vector3d blinn_phong_shading(
       bool hit = first_hit(toLight, epsilon, objects, new_hit_id, new_t, new_n);
       
       // If we hit object it means point is in shadow
-      if (hit && new_t < max_t) {
+      if (hit && new_t < t_max) {
           continue;
       }
 
