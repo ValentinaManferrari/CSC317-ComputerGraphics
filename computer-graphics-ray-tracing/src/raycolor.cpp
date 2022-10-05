@@ -24,14 +24,18 @@ bool raycolor(
   bool hit = first_hit(ray, min_t, objects, hit_id, t, n);
 
   if (hit) {
+      // Calculate color value using Blinn-Phong shading model
       rgb = blinn_phong_shading(ray, hit_id, t, n, objects, lights);
-      Eigen::Vector3d km = objects[hit_id]->material->km; // mirror coefficient
+      Eigen::Vector3d km = objects[hit_id]->material->km; // get mirror coefficient
 
+      // Check number of recursive calls and whether mirror coefficient is too small
       if (num_recursive_calls < max_depth && !km.isZero(epsilon)) {
+          // Create reflected ray
           Ray reflectedRay;
           reflectedRay.origin = ray.origin + t * ray.direction;
           reflectedRay.direction = reflect(ray.direction, n).normalized();
 
+          // Recursive call on reflected ray
           Eigen::Vector3d colour;
           bool rayColour = raycolor(reflectedRay, epsilon, objects, lights, num_recursive_calls + 1, colour);
           
