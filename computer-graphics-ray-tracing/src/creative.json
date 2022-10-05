@@ -1,17 +1,120 @@
 {
   "camera": {
     "type": "perspective",
-    "focal_length": 3,
-    "eye": [0,0,5],
-    "up": [0,1,0],
-    "look": [0,0,-1],
+    "focal_length": 1,
+    "eye": [ 0, 0, 2 ],
+    "up": [ 0, 1, 0 ],
+    "look": [ 0, 0, -1 ],
     "height": 1,
     "width": 1.7777777778
   },
+
+  "lights": [
+    {
+      "type": "point",
+      "color": [ 0.3, 0.3, 0.3 ],
+      "position": [ -0.9, 0.9, 2 ]
+    },
+    {
+      "type": "point",
+      "color": [ 0.3, 0.3, 0.3 ],
+      "position": [ 0.9, 0.9, 2 ]
+    },
+    {
+      "type": "point",
+      "color": [ 0.3, 0.3, 0.3 ],
+      "position": [ 0, 0.9, 2 ]
+    },
+    {
+      "type": "point",
+      "color": [ 0.3, 0.3, 0.3 ],
+      "position": [ 0, -0.9, 2 ]
+    }
+  ],
+
   "materials": [
+    {
+      "name": "matte gray",
+      "ka": [ 0.90, 0.90, 0.90 ],
+      "kd": [ 0.95, 0.95, 0.95 ],
+      "ks": [ 0.3, 0.3, 0.3 ],
+      "km": [ 0.05, 0.05, 0.05 ],
+      "phong_exponent": 200
+    },
+    {
+      "name": "blue metal",
+      "ka": [ 0.215686, 0.494118, 0.721569 ],
+      "kd": [ 0.215686, 0.494118, 0.721569 ],
+      "ks": [ 0.2, 0.2, 0.2 ],
+      "km": [ 0.1, 0.1, 0.1 ],
+      "phong_exponent": 500
+    },
+    {
+      "name": "green metal",
+      "ka": [ 0.301961, 0.686275, 0.290196 ],
+      "kd": [ 0.301961, 0.686275, 0.290196 ],
+      "ks": [ 0.2, 0.2, 0.2 ],
+      "km": [ 0.1, 0.1, 0.1 ],
+      "phong_exponent": 500
+    },
+    {
+      "name": "orange plastic",
+      "ka": [ 1, 0.7, 0.2 ],
+      "kd": [ 1.0, 0.7, 0.2 ],
+      "ks": [ 0.8, 0.8, 0.8 ],
+      "km": [ 0.05, 0.05, 0.05 ],
+      "phong_exponent": 1000
+    },
+    {
+      "name": "green plastic",
+      "ka": [ 1, 0.7, 0.2 ],
+      "kd": [ 0.3, 0.7, 0.3 ],
+      "ks": [ 0.8, 0.8, 0.8 ],
+      "km": [ 0.05, 0.05, 0.05 ],
+      "phong_exponent": 1000
+    }
   ],
-  "lights":[
-  ],
+
   "objects": [
+    {
+      "type": "soup",
+      "material": "orange plastic",
+      "stl": "../data/giraffe.stl"
+    },
+    {
+      "type": "soup",
+      "material": "green plastic",
+      "stl": "../data/tree.stl"
+    },
+    {
+      "type": "plane",
+      "material": "blue metal",
+      "point": [ 0, 1, 0 ],
+      "normal": [ 0, -1, 0 ]
+    },
+    {
+      "type": "plane",
+      "material": "green metal",
+      "point": [ 0, -1, 0 ],
+      "normal": [ 0, 1, 0 ]
+    },
+    {
+      "type": "plane",
+      "material": "matte gray",
+      "point": [ -2, 0, 0 ],
+      "normal": [ 2, 0, 0 ]
+    },
+    {
+      "type": "plane",
+      "material": "matte gray",
+      "point": [ 0, 0, -1 ],
+      "normal": [ 0, 0, 1 ]
+    },
+    {
+      "type": "plane",
+      "material": "matte gray",
+      "point": [ 2, 0, 0 ],
+      "normal": [ -2, 0, 0 ]
+    }
   ]
 }
