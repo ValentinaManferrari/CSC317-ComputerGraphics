@@ -99,17 +99,17 @@
     {
       "material": "brown plastic",
       "type": "soup",
-      "stl": "frame.stl"
+      "stl": "../data/frame.stl"
     },
     {
       "material": "gray mirror",
       "type": "soup",
-      "stl": "mirror.stl"
+      "stl": "../data/mirror.stl"
     },
     {
       "material": "yellow bone",
       "type": "soup",
-      "stl": "skull.stl"
+      "stl": "../data/skull.stl"
     }
   ]
 }

@@ -87,7 +87,7 @@
     {
       "type": "soup",
       "material": "matte gray",
-      "stl": "bunny.stl"
+      "stl": "../data/bunny.stl"
     },
     {
       "type": "plane",
