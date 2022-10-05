@@ -1,0 +1,4 @@
+C:/Users/valen/Documents/CSC317-ComputerGraphics/computer-graphics-ray-tracing/build-release/CMakeFiles/raytracing.dir
+C:/Users/valen/Documents/CSC317-ComputerGraphics/computer-graphics-ray-tracing/build-release/CMakeFiles/hw2.dir
+C:/Users/valen/Documents/CSC317-ComputerGraphics/computer-graphics-ray-tracing/build-release/CMakeFiles/ALL_BUILD.dir
+C:/Users/valen/Documents/CSC317-ComputerGraphics/computer-graphics-ray-tracing/build-release/CMakeFiles/ZERO_CHECK.dir

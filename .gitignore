@@ -32,5 +32,6 @@
 *.swo
 *.swp
 build/*
+build-release/*
 *.DS_Store
 *.vs
