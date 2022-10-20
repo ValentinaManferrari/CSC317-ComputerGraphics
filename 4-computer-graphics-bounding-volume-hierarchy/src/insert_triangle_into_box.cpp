@@ -7,7 +7,12 @@ void insert_triangle_into_box(
   BoundingBox & B)
 {
   ////////////////////////////////////////////////////////////////////////////
-  // Add your code here
+	// loop through all 3 dimensions of the box (x,y,z)
+	for (int axis = 0; axis < 3; axis++) {
+		B.min_corner[axis] = std::min({ B.min_corner[axis], a[axis], b[axis], c[axis] });
+		B.max_corner[axis] = std::max({ B.max_corner[axis], a[axis], b[axis], c[axis] });
+	}
+	return;
   ////////////////////////////////////////////////////////////////////////////
 }
 
