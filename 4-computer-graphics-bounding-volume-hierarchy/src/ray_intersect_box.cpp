@@ -19,7 +19,7 @@ bool ray_intersect_box(
     */
     std::vector<double> tmin_list;
     std::vector<double> tmax_list;
-    
+
     // loop through all 3 dimensions of the box (x,y,z)
     for (int axis = 0; axis < 3; axis++) {
         // bounds of the box on axis
@@ -44,7 +44,7 @@ bool ray_intersect_box(
     }
     double tmin = *std::max_element(std::begin(tmin_list), std::end(tmin_list));
     double tmax = *std::min_element(std::begin(tmax_list), std::end(tmax_list));
-    
+
     // no intersection
     if (tmax < tmin) {
         return false;
@@ -52,8 +52,8 @@ bool ray_intersect_box(
     // out of bounds
     if (tmax < min_t || tmin > max_t) {
         return false;
-    } 
+    }
     // the ray intersects the box iff the intervals (t_xmin, t_xmax), (t_ymin, t_ymax), (t_zmin, t_zmax) overlap
-    return true; 
+    return true;
   ////////////////////////////////////////////////////////////////////////////
 }

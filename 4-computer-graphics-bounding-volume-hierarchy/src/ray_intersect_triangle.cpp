@@ -1,7 +1,4 @@
 #include "ray_intersect_triangle.h"
-#include <cmath>
-#include <Eigen/Geometry>
-#include <Eigen/Dense>
 
 bool ray_intersect_triangle(
   const Ray & ray,
@@ -12,7 +9,7 @@ bool ray_intersect_triangle(
   const double max_t,
   double & t)
 {
-    ////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////
     /* Reference Sources used to write this function:
             - Texbook Section 4.4: Ray-Object Intersection
                 - Used Formulas from section 4.4.2: Ray-Triangle Intersection
@@ -20,11 +17,6 @@ bool ray_intersect_triangle(
     // retrieve ray parameters
     Eigen::RowVector3d eye = ray.origin;
     Eigen::RowVector3d direction = ray.direction;
-
-    // retrieve triangle corner values
-    Eigen::RowVector3d A = std::get<0>(this->corners);
-    Eigen::RowVector3d B = std::get<1>(this->corners);
-    Eigen::RowVector3d C = std::get<2>(this->corners);
 
     double a = A[0] - B[0];
     double b = A[1] - B[1];
@@ -57,7 +49,6 @@ bool ray_intersect_triangle(
         return false;
     }
 
-    n = (B - A).cross(C - A).normalized();
     return true;
   ////////////////////////////////////////////////////////////////////////////
 }

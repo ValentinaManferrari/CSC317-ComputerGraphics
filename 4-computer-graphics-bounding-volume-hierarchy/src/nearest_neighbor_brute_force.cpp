@@ -8,17 +8,17 @@ void nearest_neighbor_brute_force(
   double & sqrD)
 {
   ////////////////////////////////////////////////////////////////////////////
-  I = -1;
-  sqrD = std::numeric_limits<double>::infinity();
-  // loop through all points
-  for (int i = 0; i < points.rows(); ++i) {
-      // calculate squared distance for each point (normalized)
-      double squared_distance = (points.row(i) - query).squaredNorm();
-      // if we found new smallest distance update index and distance value
-      if (squared_distance < sqrD) {
-          I = i;
-          sqrD = squared_distance;
-      }
-  }
+    I = -1;
+    sqrD = std::numeric_limits<double>::infinity();
+    // loop through all points
+    for (int i = 0; i < points.rows(); ++i) {
+        // calculate squared distance for each point (normalized)
+        double squared_distance = (points.row(i) - query).squaredNorm();
+        // if we found new smallest distance update index and distance value
+        if (squared_distance < sqrD) {
+            I = i;
+            sqrD = squared_distance;
+        }
+    }
   ////////////////////////////////////////////////////////////////////////////
 }

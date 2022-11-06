@@ -12,8 +12,8 @@ bool ray_intersect_triangle_mesh_brute_force(
 {
   ////////////////////////////////////////////////////////////////////////////
     bool hit_found = false;
-    hit_t = std::numeric_limits<double>::infinity();  
-    double new_hit_t = 0.0; 
+    hit_t = std::numeric_limits<double>::infinity();
+    double new_hit_t = 0.0;
     // loop through all triangles in mesh
     for (int i = 0; i < F.rows(); i++) {
         // get triangle vertices
