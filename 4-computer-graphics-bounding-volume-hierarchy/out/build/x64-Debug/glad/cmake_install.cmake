@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/valen/Documents/CSC317-ComputerGraphics/computer-graphics-bounding-volume-hierarchy/libigl/external/glad
+# Install script for directory: C:/Users/valen/Documents/computer-graphics-bounding-volume-hierarchy/libigl/external/glad
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Users/valen/Documents/CSC317-ComputerGraphics/computer-graphics-bounding-volume-hierarchy/out/install/x64-Debug")
+  set(CMAKE_INSTALL_PREFIX "C:/Users/valen/Documents/computer-graphics-bounding-volume-hierarchy/out/install/x64-Debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

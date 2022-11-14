@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/valen/Documents/CSC317-ComputerGraphics/computer-graphics-bounding-volume-hierarchy
+# Install script for directory: C:/Users/valen/Documents/computer-graphics-bounding-volume-hierarchy
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Users/valen/Documents/CSC317-ComputerGraphics/computer-graphics-bounding-volume-hierarchy/out/install/x64-Debug")
+  set(CMAKE_INSTALL_PREFIX "C:/Users/valen/Documents/computer-graphics-bounding-volume-hierarchy/out/install/x64-Debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,8 +34,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/valen/Documents/CSC317-ComputerGraphics/computer-graphics-bounding-volume-hierarchy/out/build/x64-Debug/glad/cmake_install.cmake")
-  include("C:/Users/valen/Documents/CSC317-ComputerGraphics/computer-graphics-bounding-volume-hierarchy/out/build/x64-Debug/glfw/cmake_install.cmake")
+  include("C:/Users/valen/Documents/computer-graphics-bounding-volume-hierarchy/out/build/x64-Debug/glad/cmake_install.cmake")
+  include("C:/Users/valen/Documents/computer-graphics-bounding-volume-hierarchy/out/build/x64-Debug/glfw/cmake_install.cmake")
 
 endif()
 
@@ -47,5 +47,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/valen/Documents/CSC317-ComputerGraphics/computer-graphics-bounding-volume-hierarchy/out/build/x64-Debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/valen/Documents/computer-graphics-bounding-volume-hierarchy/out/build/x64-Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
